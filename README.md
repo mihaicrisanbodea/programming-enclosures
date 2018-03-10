@@ -2,7 +2,7 @@
 			
 ## C#
 
-### [HttpContext.Current](/programming-enclosures#httpcontextcurrent)
+[HttpContext.Current](/programming-enclosures#httpcontextcurrent)
 	
 ### HttpContext.Current
 
