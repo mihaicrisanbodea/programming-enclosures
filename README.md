@@ -6,7 +6,7 @@ Useful things to be aware of.
 
 ### HttpContext.Current
 
-**Accessing `HttpContext.Current`** in a multithreaded scenario is a pitfall.
+**Accessing `HttpContext.Current`** in a multithreaded scenario is a pitfall.<br/>
 This will result in a System.NullReferenceException because this data is available only on the main worker's local storage.
 ___
 	
