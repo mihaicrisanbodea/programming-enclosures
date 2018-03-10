@@ -21,6 +21,4 @@ ___
 
 **Reading** from a `MemoryStream` after doing other operations, like writing to it, can cause unexpected behaviour.<br/>
 The reason is the current Position within the stream has changed.<br/>
-By setting the position to the beginning of the stream using `memStream.Seek(0, SeekOrigin.Begin)`, reading from the stream works as expected.
-		
-	
+By setting the position to the beginning of the stream using `memStream.Seek(0, SeekOrigin.Begin)`, reading from it works as expected.
