@@ -4,9 +4,9 @@ Useful things to be aware of.
 			
 ## C#
 
-- [HttpContext.Current](#HttpContext.Current)
-- [MemoryStream](#MemoryStream)
-- [async/await](#async/await)
+- [HttpContext.Current](#httpcontextcurrent)
+- [MemoryStream](#memorystream)
+- [async/await](#asyncawait)
 
 
 ### HttpContext.Current
