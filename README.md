@@ -4,6 +4,10 @@ Useful things to be aware of.
 			
 ## C#
 
+- [HttpContext.Current](#HttpContext.Current)
+- [MemoryStream](#MemoryStream)
+- [async/await](#async/await)
+
 
 ### HttpContext.Current
 
@@ -35,8 +39,7 @@ In order to avoid this situation, the best way is to propagate async/await all t
 Because in some cases this is not possible, the async method can be ran in a synchronous fashion by calling `.ConfigureAwait(false)` on top of it.
 ___
 
-**Asynchronous methods with void return type** are bad news.<br/>
-Such methods cannot be awaited, because they don't return a task.<br/>
-Also, any exceptions thrown will not be handled.<br/>
-In conclusion, `Task` or `Task<T>` should be used as return types for asynchronous methods, and `void` only for event handlers.
+**Asynchronous methods with `void` return type** are bad news.<br/>
+Such methods cannot be awaited, because they don't return a task.
+That's why, asynchronous methods should only have `Task` or `Task<T>` as return types for, and `void` should be used only for event handlers.
 ___
