@@ -53,10 +53,10 @@ In terms of implementation, this can be done very easy.
  await _semaphoreSlim.WaitAsync();
  try
  {
-  await GetValuesAsync();
+   await GetValuesAsync();
  }
  finally
  {
-  _semaphoreSlim.Release();
+   _semaphoreSlim.Release();
  }```
 
