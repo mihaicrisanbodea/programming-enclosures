@@ -45,8 +45,7 @@ That's why, asynchronous methods should only have `Task` or `Task<T>` as return 
 ___
 
 **Awaiting inside a lock** is not allowed because it would produce a deadlock.<br/>
-A better approach to allow only one thread at a time to execute certain asynchronous operations can be done by keeping the other threads busy.<br/>
-In terms of implementation, this can be done very easy.
+A better approach to allow only one thread at a time to execute certain asynchronous operations can be done by keeping the other threads busy. In terms of implementation, this can be achieved very easy.
 ```csharp
  int numberOfThreadsToAllowConcurentAccess = 1;
  SemaphoreSlim _semaphoreSlim = new SemaphoreSlim(numberOfThreadsToAllowConcurentAccess);<br/>
@@ -60,4 +59,4 @@ In terms of implementation, this can be done very easy.
    _semaphoreSlim.Release();
  }
 ```
-
+___
