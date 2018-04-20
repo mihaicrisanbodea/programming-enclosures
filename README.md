@@ -41,7 +41,10 @@ ___
 
 **Asynchronous methods with `void` return type** are bad news.<br/>
 Such methods cannot be awaited, because they don't return a task.
-That's why, asynchronous methods should only have `Task` or `Task<T>` as return types for, and `void` should be used only for event handlers.
+That's why, asynchronous methods should only have `Task` or `Task<T>` as return types, and `void` should be used only for event handlers.
+___
+
+**Async/Await in Parallel.ForEach** brings us to the `void` return type problem once more. This is because the lambda used to call the async method is going to be converted to `async void`.
 ___
 
 **Awaiting inside a lock** is not allowed because it would produce a deadlock.<br/>
@@ -62,3 +65,4 @@ A better approach to allow only one thread at a time to execute certain asynchro
  }
 ```
 ___
+
