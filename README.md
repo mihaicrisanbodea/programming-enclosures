@@ -1,6 +1,9 @@
 # Programming enclosures  
 
 Useful things to be aware of.
+
+- [C#](#C#)
+- [JavaScript](#JavaScript)
 			
 ## C#
 
@@ -66,3 +69,25 @@ A better approach to allow only one thread at a time to execute certain asynchro
 ```
 ___
 
+
+
+## JavaScript
+
+- [Rest parameter](#restparameter)
+
+### Rest parameter
+
+**An indefinite number of parameters** can be represented using the rest parameter, starting with ECMAScript 2015.<br/>
+It could be the only argument of a function, or alongside other arguments.
+```javascript
+function getLength(...arguments) {
+  return arguments.length;
+}
+```
+___
+
+
+### Caller function
+
+**Finding the caller function** might be useful for certain scenarios like debugging. As when hitting a breakpoint, in JavaScript you don't have the stack trace like in other programming languages, `arguments.callee.caller` can be used to see what is the caller function.
+___
