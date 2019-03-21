@@ -87,7 +87,10 @@ function getLength(...arguments) {
 ___
 
 
-### Caller function
+### Stack trace
 
-**Finding the caller function** might be useful for certain scenarios like debugging. As when hitting a breakpoint, in JavaScript you don't have the stack trace like in other programming languages, `arguments.callee.caller` can be used to see what is the caller function.
+**Debugging** might be trickier in JavaScript. There are a few ways of inspecting the current execution:
+`arguments.callee.caller` can be used to see what is the caller function <br/>
+`console.trace()` for displaying the stack trace <br/>
+`.stack` property of the `Error` object <br/>
 ___
