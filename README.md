@@ -10,6 +10,7 @@ Useful things to be aware of.
 - [HttpContext.Current](#httpcontextcurrent)
 - [MemoryStream](#memorystream)
 - [async/await](#asyncawait)
+- [Razor](#Razor)
 
 
 ### HttpContext.Current
@@ -70,6 +71,21 @@ A better approach to allow only one thread at a time to execute certain asynchro
 ___
 
 
+### Razor
+
+**{** vs **(** syntax. In Razor syntax, between parentheses only explicit expressions can be defined.<br/>
+On the other hand, between curly braces, an entire code block can be defined. In this case, the code needs to have result assignation, and the lines of code need to end in semicolon.<br/>
+parentheses:
+```csharp
+@(Model.CreatedDate == null ? string.Empty : string.Format(myDateFormat, Model.CreatedDate.Value))
+```
+curly braces:
+```csharp
+@{
+  var createdDate = Model.CreatedDate;
+}
+```
+___
 
 ## JavaScript
 
