@@ -4,3 +4,4 @@
 
 - [C#](csharp.md)
 - [JavaScript](javascript.md)
+- [Scripting](scripting.md)
