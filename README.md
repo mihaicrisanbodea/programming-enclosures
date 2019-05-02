@@ -90,6 +90,7 @@ ___
 ## JavaScript
 
 - [Rest parameter](#restparameter)
+- [Stack trace](#stacktrace)
 
 ### Rest parameter
 
