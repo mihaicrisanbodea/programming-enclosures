@@ -22,10 +22,34 @@ openssl pkcs12 -export -out cert.pfx -inkey pvkey.key -in certificate.pem
 ___
 
 **Using certreq and PowerShell**
+
+.inf file:
+>[Version] <br>
+>Signature="$Windows NT§" <br>
+>[NewRequest] <br>
+>Subject = "CN=test,O=test,OU=test,ST=test,L=test,C=test" <br>
+>KeyLength = 2048 <br>
+>KeySpec = 1 <br>
+>Exportable = True <br>
+>ProviderName = "Microsoft RSA SChannel Cryptographic Provider" <br>
+>HashAlgorithm = SHA256 <br>
+>MachineKeySet = True <br>
+>SMIME = False <br>
+>UseExistingKeySet = False <br>
+>RequestType = PKCS10 <br>
+>KeyUsage = 0xA0 <br>
+>Silent = True <br>
+>FriendlyName = "test" <br>
+>[EnhancedKeyUsageExtension] <br>
+>OID=1.3.6.1.5.5.7.3.1 <br>
+
+Creating the certificate signing request `csr.req`. 
+Its private key is added to the OS store and will be exportable after a matching certificate will be added.
 ```bash
 certreq.exe -new certreq.inf csr.req
 ```
-
+The `.req` can be further used to obtain the `.cer` certificate. <br>
+Using PowerShell, the certificate can be imported in the local store to enable the export of the private key.
 ```powershell
 Set-Location -Path cert:\LocalMachine\My
 
