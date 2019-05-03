@@ -3,7 +3,6 @@
 ### Creating a certificate signing request (.cer) and obtaining the PKCS#12 (.pfx)
 
 **Using OpenSSL**
-*Prerequisite: openssl needs to be installed* <br>
 Creating the private key `pvkey.key` and certificate signing request `csr.csr`
 ```bash
 openssl req -nodes -newkey rsa:2048 -keyout pvkey.key -out csr.csr -subj "/C=test/ST=test/L=test/O=test/OU=test/CN=test"
