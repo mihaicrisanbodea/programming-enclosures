@@ -65,6 +65,8 @@ Set-Location -Path cert:\LocalMachine\My
 Import-Certificate -Filepath "C:\certificate.cer"
 ```
 
-The final step is exporting the private key.
-
+The final step is exporting the `.pfx`.
+```bash
+certutil -exportpfx -p "" my $thumbprint C:\certificate.pfx
+```
 ___
