@@ -14,8 +14,8 @@ With the `.cer` file, the `.pem` file can be created.
 ```bash
 openssl x509 -inform der -in certificate.cer -out certificate.pem
 ```
-Using the `.pem` file and the original private key, the `.pfx` can be build.
 
+Using the `.pem` file and the original private key, the `.pfx` can be build.
 ```bash
 openssl pkcs12 -export -out cert.pfx -inkey pvkey.key -in certificate.pem
 ```
@@ -48,11 +48,23 @@ Its private key is added to the OS store and will be exportable after a matching
 ```bash
 certreq.exe -new certreq.inf csr.req
 ```
+
 The `.req` can be further used to obtain the `.cer` certificate. <br>
+Further on, the thumbprint of the certificate is needed, to have a reference to the certificate that will have
+the private key assigned after import. <br>
+```powershell
+$certPrint = New-Object System.Security.Cryptography.X509Certificates.X509Certificate2
+$certPrint.Import("C:\certificate.cer")
+Write-Host $certPrint.Thumbprint
+```
+
 Using PowerShell, the certificate can be imported in the local store to enable the export of the private key.
 ```powershell
 Set-Location -Path cert:\LocalMachine\My
 
 Import-Certificate -Filepath "C:\certificate.cer"
 ```
+
+The final step is exporting the private key.
+
 ___
