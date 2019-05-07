@@ -21,7 +21,7 @@ openssl pkcs12 -export -out cert.pfx -inkey pvkey.key -in certificate.pem
 ```
 ___
 
-**Using certreq and PowerShell**
+**Using certreq/certutil and PowerShell**
 
 .inf file:
 >[Version] <br>
