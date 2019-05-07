@@ -1,6 +1,6 @@
 ## Scripting
 
-### Creating a certificate signing request (.cer) and obtaining the PKCS#12 (.pfx)
+### Creating a certificate signing request (.csr) and obtaining the PKCS#12 (.pfx)
 
 **Using OpenSSL**
 
@@ -43,13 +43,13 @@ ___
 >[EnhancedKeyUsageExtension] <br>
 >OID=1.3.6.1.5.5.7.3.1 <br>
 
-Creating the certificate signing request `csr.req`. 
+Creating the certificate signing request `csr.csr`. 
 Its private key is added to the OS store and will be exportable after a matching certificate will be added.
 ```bash
-certreq.exe -new certreq.inf csr.req
+certreq.exe -new certreq.inf csr.csr
 ```
 
-The `.req` can be further used to obtain the `.cer` certificate. <br>
+The `.csr` can be further used to obtain the `.cer` certificate. <br>
 Further on, the thumbprint of the certificate is needed, to have a reference to the certificate that will have
 the private key assigned after import. <br>
 ```powershell
