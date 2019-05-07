@@ -1,6 +1,8 @@
 ## Scripting
 
-### Creating a certificate signing request (.csr) and obtaining the PKCS#12 (.pfx)
+- [CSR to CER to PFX](#Creating)
+
+### Creating a certificate signing request (.csr) and obtaining the PKCS#12 (.pfx) for the requested certificate (.cer)
 
 **Using OpenSSL**
 
