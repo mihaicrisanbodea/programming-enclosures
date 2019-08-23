@@ -79,3 +79,24 @@ curly braces:
 }
 ```
 ___
+
+**HTML inside Razor**
+There are two ways of adding HTML content inside Razor syntax.
+single (entire) line:
+```csharp
+@foreach(var item in Model)
+{
+  @:Hello world
+}
+```
+multiple lines:
+```csharp
+@foreach(var item in Model)
+{
+  <text>
+  Hello 
+  world
+  </text>
+}
+```
+___
