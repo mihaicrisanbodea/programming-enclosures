@@ -80,7 +80,7 @@ curly braces:
 ```
 ___
 
-**HTML inside Razor**
+**HTML inside Razor**<br/>
 There are two ways of adding HTML content inside Razor syntax.<br/>
 single (entire) line:
 ```csharp
