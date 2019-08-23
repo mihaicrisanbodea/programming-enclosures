@@ -80,8 +80,7 @@ curly braces:
 ```
 ___
 
-**HTML inside Razor**<br/>
-There are two ways of adding HTML content inside Razor syntax.<br/>
+**Inserting HTML content inside Razor** can be achieved in multiple ways.<br/>
 single (entire) line:
 ```csharp
 @foreach(var item in Model)
