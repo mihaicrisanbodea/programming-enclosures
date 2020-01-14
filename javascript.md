@@ -22,3 +22,21 @@ ___
 `console.trace()` for displaying the stack trace <br/>
 `.stack` property of the `Error` object <br/>
 ___
+
+
+### Polyfills
+
+**Promise**s might still not be natively supported in certain browsers (e.g. in IE), so a polyfill might be needed.
+```javascript
+if (typeof Promise !== "function") {
+  this.Promise = function(handler) {
+    var self = this;
+    self._handler = handler;
+    this.then = function(onFulfillment, onRejection) {
+      this._handler(onFulfillment, onRejection);
+    }
+    return self;
+  }
+}
+```
+___
